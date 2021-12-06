@@ -34,8 +34,8 @@ class file:
 class APIProvider:
     def GET(self, name):
         print('APIProvider get api:', name)
-        res = requests.get('https://www3.nhk.or.jp/news/easy/news-list.json').json()
-        return res
+        res = requests.get('https://www3.nhk.or.jp/news/easy/news-list.json')
+        return json.loads(res.content.decode(encoding='utf-8-sig'))
 
 #
 
